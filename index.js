@@ -34,7 +34,7 @@ const commandsData = [
     .addStringOption(option =>
       option
         .setName("message")
-        .setDescription("Your message to Uzi Doorman")
+        .setDescription("Your message")
         .setRequired(true)
     ),
 
