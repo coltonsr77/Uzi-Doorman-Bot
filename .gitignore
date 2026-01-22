@@ -4,22 +4,6 @@ node_modules/
 # Environment variables
 .env
 
-# Logs
-logs/
-*.log
-
-# Runtime data
-pids/
-*.pid
-*.seed
-*.pid.lock
-
-# Optional npm cache directory
-.npm
-
-# Docker
-*.dockerfile
-
 # Windows
 .DS_Store
 Thumbs.db
