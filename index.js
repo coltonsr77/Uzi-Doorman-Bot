@@ -39,7 +39,7 @@ const commandsData = [
   // ------- Commits Command -------
   new SlashCommandBuilder()
     .setName("commits")
-    .setDescription("Shows the latest commits from GitHub")
+    .setDescription("Shows the latest commits from Github")
 ].map(cmd => cmd.toJSON());
 
 // Command Registration
