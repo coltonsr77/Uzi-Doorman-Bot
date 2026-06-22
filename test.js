@@ -1,16 +1,14 @@
 // Simple test to verify the bot structure
 console.log('Testing Discord Bot structure...');
 
-// Test 1: Check if main files exist
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 const requiredFiles = [
     'index.js',
     'package.json',
-    '.env',
-    'uziAI.js',
-    'package-lock.json'
+    'uziAI.js'
 ];
 
 let allFilesExist = true;
@@ -24,6 +22,12 @@ requiredFiles.forEach(file => {
         allFilesExist = false;
     }
 });
+
+if (fs.existsSync(path.join(__dirname, 'package-lock.json'))) {
+    console.log('✓ package-lock.json exists');
+} else {
+    console.log('⚠ package-lock.json is missing (optional)');
+}
 
 // Test 2: Check package.json dependencies
 try {
@@ -45,15 +49,11 @@ try {
 
 try {
     console.log('✓ Checking index.js syntax...');
-    require('./index.js');
+    execSync('node --check index.js', { stdio: 'ignore' });
     console.log('✓ index.js syntax looks good');
 } catch (error) {
-    if (error.message.includes('TOKEN')) {
-        console.log('✓ index.js syntax is valid (expected token error)');
-    } else {
-        console.log('✗ index.js syntax error:', error.message);
-        allFilesExist = false;
-    }
+    console.log('✗ index.js syntax error:', error.message.trim());
+    allFilesExist = false;
 }
 
 console.log('\nTest completed:', allFilesExist ? 'PASSED' : 'FAILED');

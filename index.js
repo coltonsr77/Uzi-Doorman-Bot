@@ -84,22 +84,44 @@ client.on(Events.InteractionCreate, async interaction => {
     await interaction.deferReply();
 
     try {
-      const url = "https://api.github.com/repos/coltonsr77/Uzi-Doorman-Bot/commits";
-      const res = await fetch(url);
+      const owner = "coltonsr77";
+      const repo = "Uzi-Doorman-Bot";
+      const url = `https://api.github.com/repos/${owner}/${repo}/commits?per_page=5`;
+      const res = await fetch(url, {
+        headers: {
+          Accept: "application/vnd.github+json",
+          "User-Agent": "Uzi-Doorman-Bot"
+        }
+      });
+
+      if (!res.ok) {
+        const errorBody = await res.json().catch(() => ({}));
+        throw new Error(
+          `GitHub API returned ${res.status}: ${errorBody.message || res.statusText}`
+        );
+      }
+
       const commits = await res.json();
+      if (!Array.isArray(commits) || commits.length === 0) {
+        await interaction.editReply("No recent commits were found.");
+        return;
+      }
 
-      const latest = commits.slice(0, 5);
+      let message = `**Latest commits for ${owner}/${repo}:**\n\n`;
+      commits.forEach((commit, index) => {
+        const sha = commit.sha?.slice(0, 7) || "unknown";
+        const author = commit.commit?.author?.name || "Unknown author";
+        const commitMessage = commit.commit?.message?.split("\n")[0] || "No commit message";
+        const commitUrl = commit.html_url || `https://github.com/${owner}/${repo}/commit/${commit.sha}`;
 
-      let message = "**Latest Commits:**\n\n";
-      latest.forEach((c, i) => {
-        message += `**${i + 1}.** ${c.commit.message}\n`;
-        message += `— *${c.commit.author.name}*\n\n`;
+        message += `**${index + 1}.** [${commitMessage}](${commitUrl})\n`;
+        message += `— *${author}* \`${sha}\`\n\n`;
       });
 
       await interaction.editReply(message);
     } catch (err) {
       console.error("Commit fetch error:", err);
-      await interaction.editReply("Could not fetch commits."); // This command is broken.
+      await interaction.editReply("Could not fetch commits. Please try again later.");
     }
   }
 });
