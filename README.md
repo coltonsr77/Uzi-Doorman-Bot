@@ -61,7 +61,7 @@ npm start
 
 1. Clone the repo:
 ```bash
-git clone https://github.com/coltonsr77/Uzi-Doorman-Bot/archive/refs/tags/v1.1.4-Beta1.zip
+git clone https://github.com/coltonsr77/Uzi-Doorman-Bot/archive/refs/tags/v1.1.4-Beta3.zip
 ```
 
 2. Install dependencies:
