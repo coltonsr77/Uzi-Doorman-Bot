@@ -77,7 +77,7 @@ touch .env
 
 4. Test the bot:
 ```bash
-node test.js
+npm test
 ```
 
 5. Run the bot:
