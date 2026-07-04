@@ -1,11 +1,13 @@
 # Dependencies
 node_modules/
-.git/
 
 # Environment variables
 .env
 
-# Windows
+# Windows System Files
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Other
+.git/
