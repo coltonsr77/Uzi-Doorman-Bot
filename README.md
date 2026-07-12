@@ -44,7 +44,7 @@ npm install
 3. Copy and fill in environment variables:
 ```bash
 touch .env
-# edit .env and add your values
+# edit .env and add your values.
 ```
 
 4. Test the bot:
@@ -72,7 +72,7 @@ npm install
 3. Copy and fill in environment variables:
 ```bash
 touch .env
-# edit .env and add your values
+# edit .env and add your values.
 ```
 
 4. Test the bot:
