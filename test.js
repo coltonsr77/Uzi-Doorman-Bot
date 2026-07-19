@@ -6,6 +6,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 const requiredFiles = [
+    '.env',
     'index.js',
     'package.json',
     'uziAI.js'
