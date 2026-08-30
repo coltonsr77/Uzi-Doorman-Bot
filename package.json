@@ -1,7 +1,7 @@
 {
   "name": "uzi-doorman-bot",
-  "version": "1.1.5-Beta1",
-  "description": "A Discord bot that uses Google Gemini AI to roleplay as Uzi Doorman",
+  "version": "1.1.5-Beta2",
+  "description": "A Discord bot that uses Google Gemini AI to roleplay as Uzi Doorman.",
   "main": "index.js",
   "scripts": {
     "test": "node test.js",
