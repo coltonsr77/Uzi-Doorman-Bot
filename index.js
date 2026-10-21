@@ -14,6 +14,10 @@ const { askUzi } = require("./uziAI");
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 const CLIENT_ID = process.env.CLIENT_ID;
 
+if (!DISCORD_TOKEN || !CLIENT_ID) {
+  throw new Error("Missing DISCORD_TOKEN and/or CLIENT_ID in the .env");
+} // just in case if theres no token in the .env file
+
 // Create client with message content intents for mentions.
 const client = new Client({
   intents: [
