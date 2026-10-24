@@ -83,7 +83,7 @@ client.on(Events.InteractionCreate, async interaction => {
     }
   }
 
-  // Commits Command
+  // ------- Commits Command -------
   if (interaction.commandName === "commits") {
     await interaction.deferReply();
 
