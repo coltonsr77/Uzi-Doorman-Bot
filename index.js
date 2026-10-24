@@ -69,7 +69,7 @@ client.once(Events.ClientReady, async () => {
 client.on(Events.InteractionCreate, async interaction => {
   if (!interaction.isChatInputCommand()) return;
 
-  // Roleplay Command
+  // ------- Roleplay Command -------
   if (interaction.commandName === "roleplay") {
     const userMessage = interaction.options.getString("message");
     await interaction.deferReply();
