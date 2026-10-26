@@ -21,7 +21,7 @@ jobs:
       - name: Create ZIP archive
         run: |
           mkdir -p artifacts
-          zip -r artifacts/server-v1.2.0.zip . -x ".github/*"
+          zip -r artifacts/server-v1.2.0.zip . -x "server/"
 
       # Step 3: Upload ZIP as workflow artifact
       - name: Upload ZIP artifact
