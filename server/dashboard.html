@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bot Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0e1117;
+      color: #ffffff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .card {
+      background: #1a1f29;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+      max-width: 500px;
+      margin: 40px auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00aaff;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .version {
+      font-size: 1.2em;
+      color: #00ffcc;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9em;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Uzi Bot Dashboard</h1>
+    <p class="version">Dashboard Version: 1.2.0</p>
+    <p>Last Updated: 10/26/2026</p>
+    <h3><a href="secret.html">Secret Logs</a></h3>
+    <h3>Bot Version: <span id="version">1.2.0</span></h3>
+  </div>
+
+  <div class="footer">
+    © 2026 coltonsr77 | Dashboard
+  </div>
+},
+    <!-- Load update data -->
+  <script src="updates.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (typeof botUpdate === "undefined") {
+        document.getElementById("version").textContent = "⚠️ Error: updates.js not loaded";
+        return;
+      }
+
+      document.getElementById("version").textContent = botUpdate.version;
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+name: Create ZIP Archive
+
+on:
+  push:
+    branches:
+      - main  # Change to your branch if needed
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  zip-repo:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0  # Ensure full history if needed
+
+      # Step 2: Create ZIP excluding .github folder
+      - name: Create ZIP archive
+        run: |
+          mkdir -p artifacts
+          zip -r artifacts/server-v1.2.0.zip . -x ".github/*"
+
+      # Step 3: Upload ZIP as workflow artifact
+      - name: Upload ZIP artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: Bot-Dashboard-v1.2.0
+          path: artifacts/repo-v1.2.0.zip
