@@ -21,11 +21,11 @@ jobs:
       - name: Create ZIP archive
         run: |
           mkdir -p artifacts
-          zip -r artifacts/server-v1.2.0.zip . -x "server/"
+          zip -r artifacts/server-v1.2.1.zip . -x "server/"
 
       # Step 3: Upload ZIP as workflow artifact
       - name: Upload ZIP artifact
         uses: actions/upload-artifact@v7
         with:
-          name: Bot-Dashboard-v1.2.0
-          path: artifacts/server-v1.2.0.zip
+          name: Bot-Dashboard-v1.2.1
+          path: artifacts/server-v1.2.1.zip
