@@ -1,5 +1,8 @@
 name: Create ZIP Archive
 
+permissions:
+  contents: read
+
 on:
   push:
     branches:
