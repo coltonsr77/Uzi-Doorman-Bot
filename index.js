@@ -81,10 +81,7 @@ client.on(Events.InteractionCreate, async interaction => {
       console.error("Gemini error:", err);
       await interaction.editReply("Uzi malfunctioned while processing that...");
     }
-  }
-
-  // ------- Commits Command -------
-  if (interaction.commandName === "commits") {
+  } else if (interaction.commandName === "commits") { // commits message
     await interaction.deferReply();
 
     try {
@@ -132,7 +129,7 @@ client.on(Events.InteractionCreate, async interaction => {
 
 // Auto Roleplay on Mentions or Replies.
 client.on(Events.MessageCreate, async message => {
-  if (message.author.bot) return;
+  if (!client.user || message.author.bot) return;
 
   const mentioned =
     message.mentions.has(client.user) ||
