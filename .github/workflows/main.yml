@@ -27,5 +27,5 @@ jobs:
       - name: Upload ZIP artifact
         uses: actions/upload-artifact@v7
         with:
-          name: Bot-Dashboard-v1.2.1
+          name: server-v1.2.1
           path: artifacts/server-v1.2.1.zip
