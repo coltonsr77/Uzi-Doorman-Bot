@@ -24,7 +24,7 @@ jobs:
       - name: Create ZIP archive
         run: |
           mkdir -p artifacts
-          zip -r artifacts/server-v1.2.1.zip . -x "server/"
+          zip -r artifacts/server-v1.2.1.zip "server/"
 
       # Step 3: Upload ZIP as workflow artifact
       - name: Upload ZIP artifact
