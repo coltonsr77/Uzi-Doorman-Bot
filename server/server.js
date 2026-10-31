@@ -4,7 +4,7 @@ const path = require("path");
 
 const PORT = process.env.PORT || 3000;
 
-// Bot settings accessible to index.js
+// Bot settings accessible to dashboard.html
 const botSettings = {
   statusMessage: "Online",
   prefix: "/",
