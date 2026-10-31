@@ -20,15 +20,15 @@ jobs:
         with:
           fetch-depth: 0  # Ensure full history if needed
 
-      # Step 2: Create ZIP excluding .github folder
+      # Step 2: Create ZIP
       - name: Create ZIP archive
         run: |
           mkdir -p artifacts
-          zip -r artifacts/server-v1.2.1.zip "server/"
+          zip -r artifacts/server-v1.2.2.zip "server/"
 
       # Step 3: Upload ZIP as workflow artifact
       - name: Upload ZIP artifact
         uses: actions/upload-artifact@v7
         with:
-          name: server-v1.2.1
-          path: artifacts/server-v1.2.1.zip
+          name: server-v1.2.2
+          path: artifacts/server-v1.2.2.zip
