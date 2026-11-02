@@ -48,7 +48,7 @@
   <div class="card">
     <h1>Uzi Bot Dashboard</h1>
     <p class="version">Dashboard Version: 1.2.2</p>
-    <p>Last Updated: 11/1/2026</p>
+    <p>Last Updated: 11/2/2026</p>
     <h3><a href="secret.html">Secret Logs</a></h3>
     <h3>Bot Version: <span id="version">1.2.2</span></h3>
   </div>
@@ -58,17 +58,16 @@
   </div>
 },
     <!-- Load update data -->
-  <!-- script src="updates.js"></script -->
+  <script src="updates.js"></script>
 
   <script>
-    // TODO Add updates.js
-    // document.addEventListener("DOMContentLoaded", () => {
-     // if (typeof botUpdate === "undefined") {
-      //  document.getElementById("version").textContent = "⚠️ Error: updates.js not loaded";
-       // return;
-    //  }
+    document.addEventListener("DOMContentLoaded", () => {
+     if (typeof botUpdate === "undefined") {
+      document.getElementById("version").textContent = "⚠️ Error: updates.js not loaded";
+       return;
+    }
 
-     // document.getElementById("version").textContent = botUpdate.version;
+     document.getElementById("version").textContent = botUpdate.version;
     </script>
 </body>
 </html>
