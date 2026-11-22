@@ -1,4 +1,4 @@
-const BOT_VERSION = "1.2.2"; // change when you release
+const BOT_VERSION = "1.2.3"; // change when you release
 
 async function checkForUpdates() {
   try {
