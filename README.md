@@ -33,7 +33,7 @@ GEMINI_API_KEY=your_key_here
 
 1. Clone the repo:
 ```bash
-git clone https://github.com/coltonsr77/Uzi-Doorman-Bot/archive/refs/tags/v1.2.2.zip
+git clone https://github.com/coltonsr77/Uzi-Doorman-Bot/archive/refs/tags/v1.2.3.zip
 ```
 
 2. Install dependencies:
@@ -61,7 +61,7 @@ npm start
 
 1. Clone the repo:
 ```bash
-git clone https://github.com/coltonsr77/Uzi-Doorman-Bot/archive/refs/tags/v1.1.5-Beta3.zip
+git clone https://github.com/coltonsr77/Uzi-Doorman-Bot/archive/refs/tags/v1.2.3-Beta1.zip
 ```
 
 2. Install dependencies:
