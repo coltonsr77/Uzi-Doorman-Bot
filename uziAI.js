@@ -1,11 +1,11 @@
 require("dotenv").config();
 const axios = require("axios");
-
+// Gemini`s model.
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GEMINI_MODEL = "gemini-2.5-flash";
 const memory = [];
 
-// Uzi's prompt
+// Uzi's prompt.
 const uziPersona = `
 You are Uzi Doorman from Murder Drones.
 You're sarcastic, dramatic, and tech-savvy.
