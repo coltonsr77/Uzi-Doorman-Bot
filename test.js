@@ -1,4 +1,4 @@
-// Simple test to verify the bot structure
+// Simple test to verify the bot structure.
 console.log('Testing Discord Bot structure...');
 
 const fs = require('fs');
