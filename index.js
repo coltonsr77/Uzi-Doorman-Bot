@@ -28,7 +28,7 @@ const client = new Client({
   partials: [Partials.Channel]
 });
 
-// Slash Commands
+// ------- Slash Commands -------
 const commandsData = [
   new SlashCommandBuilder()
     .setName("roleplay")
