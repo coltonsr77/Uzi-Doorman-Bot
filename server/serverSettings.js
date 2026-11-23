@@ -5,7 +5,7 @@ const filePath = path.join(__dirname, "settings.json");
 let settings = {};
 let onChangeCallback = null;
 
-// Load settings if file exists
+// Load settings if file exists.
 if (fs.existsSync(filePath)) {
   try {
     settings = JSON.parse(fs.readFileSync(filePath, "utf8"));
