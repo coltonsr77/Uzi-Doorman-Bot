@@ -11,7 +11,7 @@ async function update() {
 			cwd: projectDir,
 			windowsHide: true,
 		});
-
+// TODO: Import updater.js to index.js in 2027.
 		console.log('Checking for updates...');
 		const { stdout } = await execFileAsync('git', ['pull', '--ff-only'], {
 			cwd: projectDir,
